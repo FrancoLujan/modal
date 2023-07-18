@@ -9,18 +9,21 @@ function animacion(){
 
 
 function modal(){
-    console.log("funciono")
+
     const modal = document.querySelector("[data-caja_modal]");
     modal.classList.remove("caja_modal_invisible");
     modal.classList.add("caja_modal_visible");
-    setInterval(animacion, 10);
+    let tiempo = setInterval(animacion, 10);
+  
     modal.addEventListener("click", () =>{
         modal.classList.remove("caja_modal_visible");
         modal.classList.add("caja_modal_invisible");
+        clearInterval(tiempo)
     })
 }
 
 
 boton.addEventListener("click", modal)
+
 
 
